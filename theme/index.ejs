@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <html lang="<%= themeConfig.language %>">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title><%= siteTitle %></title>
+      <link rel="stylesheet" href="/assets/styles.css">
+    </head>
+    <body>
+      <header>
+        <h1><a href="/"><%= siteTitle %></a></h1>
+        <nav>
+          <ul>
+            <% for (let page of pages) { %>
+              <li><a href="<%= page.url %>"><%= page.title %></a></li>
+            <% } %>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <%- body %>
+      </main>
+      <footer>
+        <p>&copy; <%= new Date().getFullYear() %> <%= siteTitle %></p>
+      </footer>
+    </body>
+    </html>
